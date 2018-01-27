@@ -10,10 +10,7 @@ angular.module('app', ['ngRoute'])
         $locationProvider.html5Mode(true);
 
         $routeProvider
-            .when('/', {
-                templateUrl: "view/frontPage.html",
-                controller: "frontPageController",
-                controllerAs: "frontPageController"
-            })
+            .when('/', {templateUrl: "view/frontPage.html"}) // TODO controller
+            .when('/poolConfig', {templateUrl: "view/poolConfig.html"}) // TODO controller
             .otherwise({redirectTo: '/'});
     });
