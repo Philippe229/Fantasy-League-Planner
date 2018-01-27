@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Fantasy League Planner</title>
+    <meta charset="utf-8"/>
+    <link rel="icon" href='https://aws.amazon.com/favicon.ico'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <!--<link rel='stylesheet' href='/css/style.css'/>-->
+    <base href="/"/>
+</head>
+
+<body ng-app="app" ng-controller="mainController" class="ng-cloak">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a ng-href="/" class="navbar-brand">
+                <!--suppress CheckImageSize -->
+                <img src="images/login.png" width="25" height="20" style="display: inline;"> 343 Electronics
+            </a>
+        </div>
+
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
+                    <span class="glyphicon glyphicon-book"></span> Catalog<span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a ng-href="catalog/desktops">Desktops</a></li>
+                    <li><a ng-href="catalog/monitors">Monitors</a></li>
+                    <li><a ng-href="catalog/laptops">Laptops</a></li>
+                    <li><a ng-href="catalog/tablets">Tablets</a></li>
+                </ul>
+            </li>
+            <li ng-if="authenticate()"><a ng-href="cart" ng-show="getIsAdmin() == 0"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+            <li ng-if="authenticate()"><a ng-href="account" ng-show="getIsAdmin() == 0"><span class="glyphicon glyphicon-cog"></span> Account</a></li>
+            <li ng-if="authenticate()"><a ng-href="admin" ng-show="getIsAdmin() == 1"><span class="glyphicon glyphicon-wrench"></span> Admin</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li ng-if="!authenticate()"><a ng-href="register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+            <li ng-if="!authenticate()"><a ng-href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li ng-if="authenticate()"><a ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div ng-view="" class="view"></div>
+
+<!-- Angular Imports -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-cookies.js"></script>
+
+
+<!-- Angular Scripts -->
+<script src="js/index.js"></script>
+
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
