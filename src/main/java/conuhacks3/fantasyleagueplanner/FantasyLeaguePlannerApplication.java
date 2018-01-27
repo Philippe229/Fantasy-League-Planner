@@ -12,6 +12,7 @@ public class FantasyLeaguePlannerApplication {
 	/* Single page application routing */
 	@RequestMapping({
 			"/",
+			"/poolConfig"
 	})
 	public String redirectOnReload() {
 		return "forward:/index.html";
