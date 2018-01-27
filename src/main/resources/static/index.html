@@ -4,9 +4,11 @@
 <head>
     <title>Fantasy League Planner</title>
     <meta charset="utf-8"/>
-    <link rel="icon" href='https://aws.amazon.com/favicon.ico'>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     <link rel='stylesheet' href='/css/style.css'/>
+    <link rel='stylesheet' href='/css/poolConfig.css'/>
     <base href="/"/>
 </head>
 
@@ -16,18 +18,18 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <a ng-href="/" class="navbar-brand">
-                <!--<img src="images/login.png" width="25" height="20" style="display: inline;"> -->Fantasy League Planner
+                <img src="images/logo.png" width="25" height="20" style="display: inline;"> Fantasy League Planner
             </a>
         </div>
 
         <ul class="nav navbar-nav">
-            <li><a ng-href="cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+            <li><a ng-href="poolConfig"><span class="glyphicon glyphicon-list"></span> Pool Configuration</a></li>
         </ul>
 
     </div>
 </nav>
 
-<div ng-view="" class="view"></div>
+<div ng-view="" class="view" id="contact"></div>
 
 <!-- Angular Imports -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
@@ -37,6 +39,7 @@
 
 <!-- Angular Scripts -->
 <script src="js/index.js"></script>
+<script src="js/frontPage.js"></script>
 
 
 <!-- jQuery -->

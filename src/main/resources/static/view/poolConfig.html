@@ -1,39 +1,74 @@
-
-
 <div id="contact" class="full-height">
-    <div class="section-content">
-        <h1 class="section-header"><span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s">Fan-to-Score</span></h1>
-        <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h3>
+    <div class="section-content" style="padding-top: 50px;">
+        <h3 class="section-header">
+            <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s">
+                Fan-to-Score
+            </span>
+        </h3>
+        <p>Enter the amount of points for each statistic</p>
     </div>
+
     <div class="contact-section">
-    <div class="container">
-        <form>
-            <div class="col-md-6 form-line">
-                  <div class="form-group">
-                      <label for="exampleInputUsername">Attackers</label>
-                    <input type="text" class="form-control" id="" placeholder="Enter stats">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail">Defenders</label>
-                    <input type="email" class="form-control" id="exampleInputEmail" placeholder=" Enter stats">
-                  </div>	
-                  <div class="form-group">
-                    <label for="telephone">Goaltenders.</label>
-                    <input type="tel" class="form-control" id="telephone" placeholder="Enter stats">
-                  </div>
-              </div>
-              <div class="col-md-6">
-                  <div class="form-group">
-                      <label for ="description"> Message</label>
-                       <textarea  class="form-control" id="description" placeholder="Enter Your Message"></textarea>
-                  </div>
-                  <div>
+        <div class="container">
+            <form>
+                <div class="row" style="display: flex;display: -webkit-flex; flex-wrap: wrap;">
+                    <div class="col-md-4 form-line">
+                        <!-- Attackers -->
+                        <div class="form-group">
+                            <label for="attackerAssists">Attacker Assists</label>
+                            <input type="number" class="form-control" id="attackerAssists" placeholder="Enter stats">
+                        </div>
+                        <div class="form-group">
+                            <label for="attackerGoals">Attacker Goals</label>
+                            <input type="number" class="form-control" id="attackerGoals" placeholder="Enter stats">
+                        </div>
+                    </div>
 
-                      <button type="button" class="btn btn-default submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
-                  </div>
-                  
-            </div>
-        </form>
+
+                    <div class="col-md-4 form-line">
+                        <!-- Defenders -->
+                        <div class="form-group">
+                            <label for="defenderAssists">Defender Assists</label>
+                            <input type="number" class="form-control" id="defenderAssists" placeholder=" Enter stats">
+                        </div>
+                        <div class="form-group">
+                            <label for="defenderGoals">Defender Goals</label>
+                            <input type="number" class="form-control" id="defenderGoals" placeholder="Enter stats">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <!-- Goaltenders -->
+                        <div class="form-group">
+                            <label for="goaltenderWins">Goaltender Wins</label>
+                            <input type="number" class="form-control" id="goaltenderWins" placeholder=" Enter stats">
+                        </div>
+                        <div class="form-group">
+                            <label for="goaltenderShutouts">Goaltender Shutouts</label>
+                            <input type="number" class="form-control" id="goaltenderShutouts" placeholder="Enter stats">
+                        </div>
+                        <div class="form-group">
+                            <label for="goaltenderAssists">Goaltender Assists</label>
+                            <input type="number" class="form-control" id="goaltenderAssists" placeholder="Enter stats">
+                        </div>
+                        <div class="form-group">
+                            <label for="goaltenderGoals">Goaltender Goals</label>
+                            <input type="number" class="form-control" id="goaltenderGoals" placeholder="Enter stats">
+                        </div>
+                        <div class="form-group">
+                            <label for="goaltenderSaves">Goaltender Saves</label>
+                            <input type="number" class="form-control" id="goaltenderSaves" placeholder="Enter stats">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top: 25px;">
+                    <button type="button" class="btn btn-default submit">
+                        <i class="fa fa-paper-plane" aria-hidden="true"></i> Apply
+                    </button>
+                </div>
+
+            </form>
+        </div>
     </div>
-
-   </div>
+</div>
