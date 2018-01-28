@@ -3,7 +3,7 @@
 angular.module('app')
     .controller('poolConfigController', function ($scope, $http) {
 
-        $scope.setConfig = function() {
+        $scope.setConfig = function () {
             let data = {
                 attackerAssists: $scope.attackerAssists,
                 attackerGoals: $scope.attackerGoals,
@@ -16,14 +16,8 @@ angular.module('app')
                 goaltenderSaves: $scope.goaltenderSaves
             };
 
-            // TODO remove
-            let map = {};
-            map["ayyyy"] = 12345;
-            map["lmao"] = 54321;
-            $scope.testMap = map;
-
             $http.post("/post/poolConfig", data).then((res) => {
-               console.log(res);
+                $scope.playersMap = res.data;
             }).catch((err) => {
                 console.log("ERROR:");
                 console.log(err);

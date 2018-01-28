@@ -75,9 +75,19 @@ public class FantasyLeaguePlannerApplication {
 			players.get(i).setScore();
 		}
 		Collections.sort(players, new SortByScore());
-		for(int i = 0; i < players.size(); i++)
-			System.out.println(players.get(i).toString());
-		return "{}"; // TODO return json of top 10 players
+
+//		/* Debug */
+//		for(int i = 0; i < players.size(); i++)
+//			System.out.println(players.get(i).toString());
+
+		/* Build a map of the best 10 players */
+		Map<String, Integer> playersMap = new HashMap<>();
+		for(int i = 0; i < 11; i++) {
+			Player currentPlayer = players.get(i);
+			playersMap.put(currentPlayer.getFullName(), currentPlayer.getScore());
+		}
+
+		return gson.toJson(playersMap);
 	}
 
 

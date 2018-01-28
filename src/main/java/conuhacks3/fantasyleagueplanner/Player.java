@@ -32,6 +32,10 @@ public class Player {
         this.config = config;
     }
 
+    public String getFullName() {
+        return FirstName + " " + LastName;
+    }
+
     public String toString(){
         return this.FirstName + " " + this.LastName + ": " + this.StatisticDetails.toString() + ", PositionCode: " + this.PositionCode + ", score: " + this.score;
     }
