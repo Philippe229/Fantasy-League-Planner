@@ -34,4 +34,8 @@ public class Player {
         this.config = config;
     }
 
+    public String toString(){
+        return "FirstName : " + this.FirstName + " SkatingGoalsTotal : " + this.SkatingAssistsTotal + " PositionCode : " + this.PositionCode + " score : " + this.score;
+    }
+
 }

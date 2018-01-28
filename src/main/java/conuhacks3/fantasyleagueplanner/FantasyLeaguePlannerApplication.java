@@ -1,6 +1,7 @@
 package conuhacks3.fantasyleagueplanner;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
@@ -9,8 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.io.*;
+import java.lang.reflect.Type;
+import java.util.*;
 
 @Controller
 @SpringBootApplication
@@ -42,6 +44,37 @@ public class FantasyLeaguePlannerApplication {
 		Gson gson = new Gson();
 		PoolConfiguration poolConfiguration = gson.fromJson(json, PoolConfiguration.class);
 
+		// read data from json text file
+		String jsonStats = "";
+		String fileName = "src/main/java/conuhacks3/fantasyleagueplanner/stats.json";
+		// reference to one line at a time
+		String line = null;
+		try {
+			// FileReader reads text files in the default encoding.
+			FileReader fileReader = new FileReader(fileName);
+			// Always wrap FileReader in BufferedReader.
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+			System.out.println("reading file...");
+			while((line = bufferedReader.readLine()) != null) {
+				jsonStats += line;
+			}
+			bufferedReader.close();
+			System.out.println("finished reading file");
+		}
+		catch(FileNotFoundException ex) {
+			System.out.println("Unable to open file '" + fileName + "'");
+		}
+		catch(IOException ex) {
+			System.out.println("Error reading file '" + fileName + "'");
+		}
+
+		Type collectionType = new TypeToken<ArrayList<Player>>(){}.getType();
+		ArrayList<Player> players = gson.fromJson(jsonStats, collectionType);
+		Collections.sort(players, new SortByScore());
+		for(int i = 0; i < players.size(); i++){
+			players.get(i).setScore();
+			System.out.println(players.get(i).toString());
+		}
 		return "{}"; // TODO return json of top 10 players
 	}
 
