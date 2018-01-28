@@ -9,6 +9,8 @@ angular.module('app')
                 attackerGoals: $scope.attackerGoals,
                 defenderAssists: $scope.defenderAssists,
                 defenderGoals: $scope.defenderGoals,
+                goaltenderWins: $scope.goaltenderWins,
+                goaltenderShutouts: $scope.goaltenderShutouts,
             };
 
             console.log(data);

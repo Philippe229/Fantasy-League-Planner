@@ -7,20 +7,20 @@
             </span>
         </h3>
     </div>
-
     <div class="contact-section">
-        <div class="container">
+        <div class="container main-login main-center">
             <form ng-submit="setConfig()">
                 <div class="row" style="display: flex;display: -webkit-flex; flex-wrap: wrap;">
                     <div class="col-md-4 form-line">
                         <!-- Attackers -->
+                        <h2>Attacker</h2>
                         <div class="form-group">
-                            <label for="attackerAssists">Attacker Assists</label>
+                            <label for="attackerAssists">Assists</label>
                             <input type="number" class="form-control" id="attackerAssists" placeholder="Enter points"
                                    autofocus="" required="" ng-model="attackerAssists">
                         </div>
                         <div class="form-group">
-                            <label for="attackerGoals">Attacker Goals</label>
+                            <label for="attackerGoals">Goals</label>
                             <input type="number" class="form-control" id="attackerGoals" placeholder="Enter points"
                                    required="" ng-model="attackerGoals">
                         </div>
@@ -29,13 +29,14 @@
 
                     <div class="col-md-4 form-line">
                         <!-- Defenders -->
+                        <h2>Defender</h2>
                         <div class="form-group">
-                            <label for="defenderAssists">Defender Assists</label>
+                            <label for="defenderAssists">Assists</label>
                             <input type="number" class="form-control" id="defenderAssists" placeholder=" Enter points"
                                    required="" ng-model="defenderAssists">
                         </div>
                         <div class="form-group">
-                            <label for="defenderGoals">Defender Goals</label>
+                            <label for="defenderGoals">Goals</label>
                             <input type="number" class="form-control" id="defenderGoals" placeholder="Enter points"
                                    required="" ng-model="defenderGoals">
                         </div>
@@ -43,24 +44,25 @@
 
                     <div class="col-md-4">
                         <!-- Goaltenders -->
+                        <h2>Goaltender</h2>
                         <div class="form-group">
-                            <label for="goaltenderWins">Goaltender Wins</label>
-                            <input type="number" class="form-control" id="goaltenderWins" placeholder=" Enter points">
+                            <label for="goaltenderWins">Wins</label>
+                            <input type="number" class="form-control" id="goaltenderWins" placeholder=" Enter points" ng-model="goaltenderWins">
                         </div>
                         <div class="form-group">
-                            <label for="goaltenderShutouts">Goaltender Shutouts</label>
-                            <input type="number" class="form-control" id="goaltenderShutouts" placeholder="Enter points">
+                            <label for="goaltenderShutouts">Shutouts</label>
+                            <input type="number" class="form-control" id="goaltenderShutouts" placeholder="Enter points" ng-model="goaltenderWins">
                         </div>
                         <div class="form-group">
-                            <label for="goaltenderAssists">Goaltender Assists</label>
+                            <label for="goaltenderAssists">Assists</label>
                             <input type="number" class="form-control" id="goaltenderAssists" placeholder="Enter points">
                         </div>
                         <div class="form-group">
-                            <label for="goaltenderGoals">Goaltender Goals</label>
+                            <label for="goaltenderGoals">Goals</label>
                             <input type="number" class="form-control" id="goaltenderGoals" placeholder="Enter points">
                         </div>
                         <div class="form-group">
-                            <label for="goaltenderSaves">Goaltender Saves</label>
+                            <label for="goaltenderSaves">Saves</label>
                             <input type="number" class="form-control" id="goaltenderSaves" placeholder="Enter points">
                         </div>
                     </div>
