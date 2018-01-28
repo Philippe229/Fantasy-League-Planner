@@ -70,11 +70,13 @@ public class FantasyLeaguePlannerApplication {
 
 		Type collectionType = new TypeToken<ArrayList<Player>>(){}.getType();
 		ArrayList<Player> players = gson.fromJson(jsonStats, collectionType);
-		Collections.sort(players, new SortByScore());
 		for(int i = 0; i < players.size(); i++){
+			players.get(i).setPoolConfiguration(poolConfiguration);
 			players.get(i).setScore();
-			System.out.println(players.get(i).toString());
 		}
+		Collections.sort(players, new SortByScore());
+		for(int i = 0; i < players.size(); i++)
+			System.out.println(players.get(i).toString());
 		return "{}"; // TODO return json of top 10 players
 	}
 
