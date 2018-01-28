@@ -3,74 +3,125 @@
     <div class="section-content" style="padding-top: 50px;">
         <h4 class="section-header">Enter the amount of points for each statistic</h4>
     </div>
-        <div class="contact-section ">
-            <div class="container main-login main-centerSoccer">
-                <form ng-submit="setConfig()">
-                    <div class="row" style="display: flex;display: -webkit-flex; flex-wrap: wrap;">
-                        <div class="col-md-4 form-line">
-                            <!-- Attackers -->
-                            <h2>Attacker</h2>
-                            <div class="form-group">
-                                <label for="attackerAssists">Assists</label>
-                                <input type="number" class="form-control" id="attackerAssists" placeholder="Enter points"
-                                       autofocus="" required="" ng-model="attackerAssists">
-                            </div>
-                            <div class="form-group">
-                                <label for="attackerGoals">Goals</label>
-                                <input type="number" class="form-control" id="attackerGoals" placeholder="Enter points"
-                                       required="" ng-model="attackerGoals">
-                            </div>
+    <div class="contact-section ">
+        <div class="container main-login main-centerSoccer">
+            <form name="poolConfigSoccerForm" ng-submit="setConfig()">
+                <div class="row" style="display: flex;display: -webkit-flex; flex-wrap: wrap;">
+                    <div class="col-md-4 form-line">
+                        <!-- Attackers -->
+                        <h2>Attacker</h2>
+                        <div class="form-group">
+                            <label for="attackerAssists">Assists</label>
+                            <input type="number" class="form-control" id="attackerAssists" placeholder="Enter points"
+                                   autofocus="" required="" ng-model="attackerAssists">
                         </div>
-
-
-                        <div class="col-md-4 form-line">
-                            <!-- Defenders -->
-                            <h2>Midfielder</h2>
-                            <div class="form-group">
-                                <label for="defenderAssists">Assists</label>
-                                <input type="number" class="form-control" id="defenderAssists" placeholder="Enter points"
-                                       required="" ng-model="defenderAssists">
-                            </div>
-                            <div class="form-group">
-                                <label for="defenderGoals">Goals</label>
-                                <input type="number" class="form-control" id="defenderGoals" placeholder="Enter points"
-                                       required="" ng-model="defenderGoals">
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <!-- Goaltenders -->
-                            <h2>Goalkeeper</h2>
-                            <div class="form-group">
-                                <label for="goaltenderWins">Wins</label>
-                                <input type="number" class="form-control" id="goaltenderWins" placeholder="Enter points" ng-model="goaltenderWins">
-                            </div>
-                            <div class="form-group">
-                                <label for="goaltenderShutouts">Clean Sheet</label>
-                                <input type="number" class="form-control" id="goaltenderShutouts" placeholder="Enter points" ng-model="goaltenderShutouts">
-                            </div>
-                            <div class="form-group">
-                                <label for="goaltenderAssists">Assists</label>
-                                <input type="number" class="form-control" id="goaltenderAssists" placeholder="Enter points" ng-model="goaltenderAssists">
-                            </div>
-                            <div class="form-group">
-                                <label for="goaltenderGoals">Goals</label>
-                                <input type="number" class="form-control" id="goaltenderGoals" placeholder="Enter points" ng-model="goaltenderGoals">
-                            </div>
-                            <div class="form-group">
-                                <label for="goaltenderSaves">Saves</label>
-                                <input type="number" class="form-control" id="goaltenderSaves" placeholder="Enter points" ng-model="goaltenderSaves">
-                            </div>
+                        <div class="form-group">
+                            <label for="attackerGoals">Goals</label>
+                            <input type="number" class="form-control" id="attackerGoals" placeholder="Enter points"
+                                   required="" ng-model="attackerGoals">
                         </div>
                     </div>
 
-                    <div class="row" style="margin-top: 25px;">
-                        <button type="submit" class="btn btn-default submit">
-                            <i class="fa fa-paper-plane" aria-hidden="true"></i> Apply
-                        </button>
+                    <div class="col-md-4 form-line">
+                        <!-- Midfielders -->
+                        <h2>Midfielder</h2>
+                        <div class="form-group">
+                            <label for="midfielderAssists">Assists</label>
+                            <input type="number" class="form-control" id="midfielderAssists" placeholder="Enter points"
+                                   required="" ng-model="midfielderAssists">
+                        </div>
+                        <div class="form-group">
+                            <label for="midfielderGoals">Goals</label>
+                            <input type="number" class="form-control" id="midfielderGoals" placeholder="Enter points"
+                                   required="" ng-model="midfielderGoals">
+                        </div>
                     </div>
 
-                </form>
-            </div>
+                    <div class="col-md-4">
+                        <!-- Defenders -->
+                        <h2>Midfielder</h2>
+                        <div class="form-group">
+                            <label for="defenderAssists">Assists</label>
+                            <input type="number" class="form-control" id="defenderAssists" placeholder="Enter points"
+                                   required="" ng-model="defenderAssists">
+                        </div>
+                        <div class="form-group">
+                            <label for="defenderGoals">Goals</label>
+                            <input type="number" class="form-control" id="defenderGoals" placeholder="Enter points"
+                                   required="" ng-model="defenderGoals">
+                        </div>
+                    </div>
+
+                    <!--Not supported by API yet-->
+                    <!--<div class="col-md-4">-->
+                    <!--&lt;!&ndash; Goaltenders &ndash;&gt;-->
+                    <!--<h2>Goalkeeper</h2>-->
+                    <!--<div class="form-group">-->
+                    <!--<label for="goaltenderWins">Wins</label>-->
+                    <!--<input type="number" class="form-control" id="goaltenderWins" placeholder="Enter points" ng-model="goaltenderWins">-->
+                    <!--</div>-->
+                    <!--<div class="form-group">-->
+                    <!--<label for="goaltenderShutouts">Clean Sheet</label>-->
+                    <!--<input type="number" class="form-control" id="goaltenderShutouts" placeholder="Enter points" ng-model="goaltenderShutouts">-->
+                    <!--</div>-->
+                    <!--<div class="form-group">-->
+                    <!--<label for="goaltenderAssists">Assists</label>-->
+                    <!--<input type="number" class="form-control" id="goaltenderAssists" placeholder="Enter points" ng-model="goaltenderAssists">-->
+                    <!--</div>-->
+                    <!--<div class="form-group">-->
+                    <!--<label for="goaltenderGoals">Goals</label>-->
+                    <!--<input type="number" class="form-control" id="goaltenderGoals" placeholder="Enter points" ng-model="goaltenderGoals">-->
+                    <!--</div>-->
+                    <!--<div class="form-group">-->
+                    <!--<label for="goaltenderSaves">Saves</label>-->
+                    <!--<input type="number" class="form-control" id="goaltenderSaves" placeholder="Enter points" ng-model="goaltenderSaves">-->
+                    <!--</div>-->
+                    <!--</div>-->
+
+                </div>
+
+                <div class="row" style="margin-top: 25px;">
+                    <button type="submit" class="btn btn-default submit" disabled="disabled" ng-disabled="poolConfigSoccerForm.$invalid"
+                            data-toggle="modal" data-target="#players">
+                        <i class="fa fa-paper-plane" aria-hidden="true"></i> Apply
+                    </button>
+                </div>
+
+            </form>
         </div>
     </div>
+</div>
+
+<div class="modal fade players" id="players" style="color: #000;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <a href="#" data-dismiss="modal" class="class pull-right">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </a>
+                <h3 class="modal-title">Player Rankings</h3>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+
+                    <div class="col-md-12 product_content">
+                        <table class="table table-striped">
+                            <tr class="row">
+                                <th>Full Name</th>
+                                <th>Potential Score</th>
+                            </tr>
+                            <tr class="row" ng-repeat="(key,value) in playersMap">
+                                <td>{{key}}</td>
+                                <td>{{value}}</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

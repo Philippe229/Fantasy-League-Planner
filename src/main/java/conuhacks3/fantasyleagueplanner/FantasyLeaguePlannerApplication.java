@@ -91,6 +91,15 @@ public class FantasyLeaguePlannerApplication {
 	}
 
 
+    @RequestMapping(value = "/post/poolConfigSoccer", method = RequestMethod.POST)
+    @ResponseBody
+    public String poolConfigSoccer(@RequestBody String json) {
+        Gson gson = new Gson();
+        PoolConfigurationSoccer poolConfiguration = gson.fromJson(json, PoolConfigurationSoccer.class);
+
+        return "{}";
+    }
+
 	public static void main(String[] args) {
 		SpringApplication.run(FantasyLeaguePlannerApplication.class, args);
 	}
