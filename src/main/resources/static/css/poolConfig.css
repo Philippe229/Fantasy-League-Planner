@@ -1,5 +1,41 @@
+/*Contact sectiom*/
+.main-login{
+    background-color: #fff;
+   /* shadows and rounded borders */
+   -moz-border-radius: 2px;
+   -webkit-border-radius: 2px;
+   border-radius: 2px;
+   -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+   -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+}
+
+.main-center{
+    margin-top: 30px;
+    margin: 0 auto;
+    max-width: 100%;
+   padding: 40px 40px;
+    background-image: url(/../images/hockey.jpg);
+}
+
+.main-centerSoccer{
+    margin-top: 30px;
+    margin: 0 auto;
+    max-width: 100%;
+   padding: 40px 40px;
+    background-image: url(/../images/soccer.jpg);
+}
+
+.content-header {
+    font-size: 45px;
+}
+
 .section-content {
     text-align: center;
+}
+h2{
+    color: rgb(54, 46, 199);
 }
 
 #contact {
@@ -53,3 +89,4 @@ label {
     background-color: transparent;
     color: #fff;
 }
+
