@@ -1,16 +1,12 @@
 <div id="contact" class="full-height">
 
     <div class="section-content" style="padding-top: 50px;">
-        <h3 class="section-header">
-            <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s">
-                Enter the amount of points for each statistic
-            </span>
-        </h3>
+        <h4 class="section-header">Enter the amount of points for each statistic</h4>
     </div>
 
     <div class="contact-section">
         <div class="container">
-            <form ng-submit="setConfig()">
+            <form name="poolConfigForm" ng-submit="setConfig()">
                 <div class="row" style="display: flex;display: -webkit-flex; flex-wrap: wrap;">
                     <div class="col-md-4 form-line">
                         <!-- Attackers -->
@@ -31,7 +27,7 @@
                         <!-- Defenders -->
                         <div class="form-group">
                             <label for="defenderAssists">Defender Assists</label>
-                            <input type="number" class="form-control" id="defenderAssists" placeholder=" Enter points"
+                            <input type="number" class="form-control" id="defenderAssists" placeholder="Enter points"
                                    required="" ng-model="defenderAssists">
                         </div>
                         <div class="form-group">
@@ -45,7 +41,7 @@
                         <!-- Goaltenders -->
                         <div class="form-group">
                             <label for="goaltenderWins">Goaltender Wins</label>
-                            <input type="number" class="form-control" id="goaltenderWins" placeholder=" Enter points">
+                            <input type="number" class="form-control" id="goaltenderWins" placeholder="Enter points">
                         </div>
                         <div class="form-group">
                             <label for="goaltenderShutouts">Goaltender Shutouts</label>
@@ -67,12 +63,47 @@
                 </div>
 
                 <div class="row" style="margin-top: 25px;">
-                    <button type="submit" class="btn btn-default submit">
+                    <button type="submit" class="btn btn-default submit" disabled="disabled" ng-disabled="poolConfigForm.$invalid"
+                            data-toggle="modal" data-target="#players">
                         <i class="fa fa-paper-plane" aria-hidden="true"></i> Apply
                     </button>
                 </div>
 
             </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade players" id="players" style="color: #000;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <a href="#" data-dismiss="modal" class="class pull-right">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </a>
+                <h3 class="modal-title">Player Rankings</h3>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+
+                    <div class="col-md-12 product_content">
+                        <table class="table table-striped">
+                            <tr class="row">
+                                <th>Full Name</th>
+                                <th>Potential Score</th>
+                            </tr>
+                            <tr class="row" ng-repeat="(key,value) in testMap">
+                                <td>{{key}}</td>
+                                <td>{{value}}</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

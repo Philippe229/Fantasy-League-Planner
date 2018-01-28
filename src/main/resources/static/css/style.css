@@ -40,3 +40,8 @@ html, body {
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
     -webkit-animation: fadein 1.5s;
 }
+
+.players .modal-dialog {
+    max-width: 800px;
+    width: 100%;
+}

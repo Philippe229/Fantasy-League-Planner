@@ -11,7 +11,11 @@ angular.module('app')
                 defenderGoals: $scope.defenderGoals,
             };
 
-            console.log(data);
+            // TODO remove
+            let map = {};
+            map["ayyyy"] = 12345;
+            map["lmao"] = 54321;
+            $scope.testMap = map;
 
             $http.post("/post/poolConfig", data).then((res) => {
                console.log(res);
