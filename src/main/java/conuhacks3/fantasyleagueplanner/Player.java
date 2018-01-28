@@ -10,6 +10,10 @@ public class Player {
     private int score;
     private PoolConfiguration config;
 
+    public Player(){
+
+    }
+
     public Player(String FirstName, String LastName, StatisticDetails StatisticDetails, PositionCodes PositionCode){
         this.FirstName = FirstName;
         this.LastName = LastName;

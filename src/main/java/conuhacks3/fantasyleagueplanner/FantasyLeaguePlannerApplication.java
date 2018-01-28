@@ -86,18 +86,58 @@ public class FantasyLeaguePlannerApplication {
 			Player currentPlayer = players.get(i);
 			playersMap.put(currentPlayer.getFullName(), currentPlayer.getScore());
 		}
-
 		return gson.toJson(playersMap);
 	}
-
 
     @RequestMapping(value = "/post/poolConfigSoccer", method = RequestMethod.POST)
     @ResponseBody
     public String poolConfigSoccer(@RequestBody String json) {
-        Gson gson = new Gson();
-        PoolConfigurationSoccer poolConfiguration = gson.fromJson(json, PoolConfigurationSoccer.class);
+		Gson gson = new Gson();
+		PoolConfigurationSoccer poolConfigurationSoccer = gson.fromJson(json, PoolConfigurationSoccer.class);
 
-        return "{}";
+		// read data from json text file
+		String jsonStats = "";
+		String fileName = "src/main/java/conuhacks3/fantasyleagueplanner/soccerStats.json";
+		// reference to one line at a time
+		String line = null;
+		try {
+			// FileReader reads text files in the default encoding.
+			FileReader fileReader = new FileReader(fileName);
+			// Always wrap FileReader in BufferedReader.
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+			System.out.println("reading file...");
+			while((line = bufferedReader.readLine()) != null) {
+				jsonStats += line;
+			}
+			bufferedReader.close();
+			System.out.println("finished reading file");
+		}
+		catch(FileNotFoundException ex) {
+			System.out.println("Unable to open file '" + fileName + "'");
+		}
+		catch(IOException ex) {
+			System.out.println("Error reading file '" + fileName + "'");
+		}
+
+		Type collectionType = new TypeToken<ArrayList<SoccerPlayer>>(){}.getType();
+		ArrayList<SoccerPlayer> players = gson.fromJson(jsonStats, collectionType);
+		for(int i = 0; i < players.size(); i++){
+			players.get(i).setPoolConfiguration(poolConfigurationSoccer);
+			players.get(i).setScore();
+		}
+		Collections.sort(players, new SortByScoreSoccer());
+
+		/* Debug
+		for(int i = 0; i < players.size(); i++)
+			System.out.println(players.get(i).toString());
+		*/
+		/* Build a map of the best 10 players */
+		Map<String, Integer> playersMap = new HashMap<>();
+		for(int i = 0; i < 20; i++) {
+			SoccerPlayer currentPlayer = players.get(i);
+			playersMap.put(currentPlayer.getFullName(), currentPlayer.getScore());
+		}
+		return gson.toJson(playersMap);
     }
 
 	public static void main(String[] args) {
