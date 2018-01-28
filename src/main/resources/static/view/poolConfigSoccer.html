@@ -1,0 +1,80 @@
+<div id="contact" class="full-height">
+
+        <div class="section-content" style="padding-top: 50px;">
+            <h3 class="section-header">
+                <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s">
+                    Enter the amount of points for each statistic
+                </span>
+            </h3>
+        </div>
+        <div class="contact-section ">
+            <div class="container main-login main-centerSoccer">
+                <form ng-submit="setConfig()">
+                    <div class="row" style="display: flex;display: -webkit-flex; flex-wrap: wrap;">
+                        <div class="col-md-4 form-line">
+                            <!-- Attackers -->
+                            <h2>Attacker</h2>
+                            <div class="form-group">
+                                <label for="attackerAssists">Assists</label>
+                                <input type="number" class="form-control" id="attackerAssists" placeholder="Enter points"
+                                       autofocus="" required="" ng-model="attackerAssists">
+                            </div>
+                            <div class="form-group">
+                                <label for="attackerGoals">Goals</label>
+                                <input type="number" class="form-control" id="attackerGoals" placeholder="Enter points"
+                                       required="" ng-model="attackerGoals">
+                            </div>
+                        </div>
+    
+    
+                        <div class="col-md-4 form-line">
+                            <!-- Defenders -->
+                            <h2>Midfielder</h2>
+                            <div class="form-group">
+                                <label for="defenderAssists">Assists</label>
+                                <input type="number" class="form-control" id="defenderAssists" placeholder=" Enter points"
+                                       required="" ng-model="defenderAssists">
+                            </div>
+                            <div class="form-group">
+                                <label for="defenderGoals">Goals</label>
+                                <input type="number" class="form-control" id="defenderGoals" placeholder="Enter points"
+                                       required="" ng-model="defenderGoals">
+                            </div>
+                        </div>
+    
+                        <div class="col-md-4">
+                            <!-- Goaltenders -->
+                            <h2>Goalkeeper</h2>
+                            <div class="form-group">
+                                <label for="goaltenderWins">Wins</label>
+                                <input type="number" class="form-control" id="goaltenderWins" placeholder=" Enter points" ng-model="goaltenderWins">
+                            </div>
+                            <div class="form-group">
+                                <label for="goaltenderShutouts">Clean Sheet</label>
+                                <input type="number" class="form-control" id="goaltenderShutouts" placeholder="Enter points" ng-model="goaltenderShutouts">
+                            </div>
+                            <div class="form-group">
+                                <label for="goaltenderAssists">Assists</label>
+                                <input type="number" class="form-control" id="goaltenderAssists" placeholder="Enter points" ng-model="goaltenderAssists">
+                            </div>
+                            <div class="form-group">
+                                <label for="goaltenderGoals">Goals</label>
+                                <input type="number" class="form-control" id="goaltenderGoals" placeholder="Enter points" ng-model="goaltenderGoals">
+                            </div>
+                            <div class="form-group">
+                                <label for="goaltenderSaves">Saves</label>
+                                <input type="number" class="form-control" id="goaltenderSaves" placeholder="Enter points" ng-model="goaltenderSaves">
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row" style="margin-top: 25px;">
+                        <button type="submit" class="btn btn-default submit">
+                            <i class="fa fa-paper-plane" aria-hidden="true"></i> Apply
+                        </button>
+                    </div>
+    
+                </form>
+            </div>
+        </div>
+    </div>
