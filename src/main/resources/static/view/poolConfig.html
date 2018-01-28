@@ -1,26 +1,28 @@
 <div id="contact" class="full-height">
+
     <div class="section-content" style="padding-top: 50px;">
         <h3 class="section-header">
             <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s">
-                Fan-to-Score
+                Enter the amount of points for each statistic
             </span>
         </h3>
-        <p>Enter the amount of points for each statistic</p>
     </div>
 
     <div class="contact-section">
         <div class="container">
-            <form>
+            <form ng-submit="setConfig()">
                 <div class="row" style="display: flex;display: -webkit-flex; flex-wrap: wrap;">
                     <div class="col-md-4 form-line">
                         <!-- Attackers -->
                         <div class="form-group">
                             <label for="attackerAssists">Attacker Assists</label>
-                            <input type="number" class="form-control" id="attackerAssists" placeholder="Enter stats">
+                            <input type="number" class="form-control" id="attackerAssists" placeholder="Enter points"
+                                   autofocus="" required="" ng-model="attackerAssists">
                         </div>
                         <div class="form-group">
                             <label for="attackerGoals">Attacker Goals</label>
-                            <input type="number" class="form-control" id="attackerGoals" placeholder="Enter stats">
+                            <input type="number" class="form-control" id="attackerGoals" placeholder="Enter points"
+                                   required="" ng-model="attackerGoals">
                         </div>
                     </div>
 
@@ -29,11 +31,13 @@
                         <!-- Defenders -->
                         <div class="form-group">
                             <label for="defenderAssists">Defender Assists</label>
-                            <input type="number" class="form-control" id="defenderAssists" placeholder=" Enter stats">
+                            <input type="number" class="form-control" id="defenderAssists" placeholder=" Enter points"
+                                   required="" ng-model="defenderAssists">
                         </div>
                         <div class="form-group">
                             <label for="defenderGoals">Defender Goals</label>
-                            <input type="number" class="form-control" id="defenderGoals" placeholder="Enter stats">
+                            <input type="number" class="form-control" id="defenderGoals" placeholder="Enter points"
+                                   required="" ng-model="defenderGoals">
                         </div>
                     </div>
 
@@ -41,29 +45,29 @@
                         <!-- Goaltenders -->
                         <div class="form-group">
                             <label for="goaltenderWins">Goaltender Wins</label>
-                            <input type="number" class="form-control" id="goaltenderWins" placeholder=" Enter stats">
+                            <input type="number" class="form-control" id="goaltenderWins" placeholder=" Enter points">
                         </div>
                         <div class="form-group">
                             <label for="goaltenderShutouts">Goaltender Shutouts</label>
-                            <input type="number" class="form-control" id="goaltenderShutouts" placeholder="Enter stats">
+                            <input type="number" class="form-control" id="goaltenderShutouts" placeholder="Enter points">
                         </div>
                         <div class="form-group">
                             <label for="goaltenderAssists">Goaltender Assists</label>
-                            <input type="number" class="form-control" id="goaltenderAssists" placeholder="Enter stats">
+                            <input type="number" class="form-control" id="goaltenderAssists" placeholder="Enter points">
                         </div>
                         <div class="form-group">
                             <label for="goaltenderGoals">Goaltender Goals</label>
-                            <input type="number" class="form-control" id="goaltenderGoals" placeholder="Enter stats">
+                            <input type="number" class="form-control" id="goaltenderGoals" placeholder="Enter points">
                         </div>
                         <div class="form-group">
                             <label for="goaltenderSaves">Goaltender Saves</label>
-                            <input type="number" class="form-control" id="goaltenderSaves" placeholder="Enter stats">
+                            <input type="number" class="form-control" id="goaltenderSaves" placeholder="Enter points">
                         </div>
                     </div>
                 </div>
 
                 <div class="row" style="margin-top: 25px;">
-                    <button type="button" class="btn btn-default submit">
+                    <button type="submit" class="btn btn-default submit">
                         <i class="fa fa-paper-plane" aria-hidden="true"></i> Apply
                     </button>
                 </div>

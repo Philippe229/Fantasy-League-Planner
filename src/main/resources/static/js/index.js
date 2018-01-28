@@ -11,6 +11,6 @@ angular.module('app', ['ngRoute'])
 
         $routeProvider
             .when('/', {templateUrl: "view/frontPage.html", controller: "frontPageController"})
-            .when('/poolConfig', {templateUrl: "view/poolConfig.html"}) // TODO controller
+            .when('/poolConfig', {templateUrl: "view/poolConfig.html", controller: "poolConfigController"})
             .otherwise({redirectTo: '/'});
     });
