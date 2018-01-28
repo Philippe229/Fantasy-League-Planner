@@ -86,7 +86,7 @@ public class FantasyLeaguePlannerApplication {
 			Player currentPlayer = players.get(i);
 			playersMap.put(currentPlayer.getFullName(), currentPlayer.getScore());
 		}
-		return gson.toJson(playersMap);
+		return gson.toJson(FantasyLeaguePlannerApplication.sortByValue(playersMap));
 	}
 
     @RequestMapping(value = "/post/poolConfigSoccer", method = RequestMethod.POST)
