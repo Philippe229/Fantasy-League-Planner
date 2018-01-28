@@ -82,7 +82,7 @@ public class FantasyLeaguePlannerApplication {
 
 		/* Build a map of the best 10 players */
 		Map<String, Integer> playersMap = new HashMap<>();
-		for(int i = 0; i < 11; i++) {
+		for(int i = 0; i < 20; i++) {
 			Player currentPlayer = players.get(i);
 			playersMap.put(currentPlayer.getFullName(), currentPlayer.getScore());
 		}
