@@ -2,7 +2,7 @@ package conuhacks3.fantasyleagueplanner;
 
 public class Player {
     // var names must match exactly json response for wrapper, case sensitive
-    public enum PositionCodes {Center, LeftWing, RightWing}
+    public enum PositionCodes {Center, LeftWing, RightWing, Defense, Goalie}
     private PositionCodes PositionCode;
     private String FirstName;
     private String LastName;
@@ -18,10 +18,13 @@ public class Player {
     }
 
     protected void setScore(){
-        if(this.PositionCode == PositionCode.Center || this.PositionCode == PositionCode.LeftWing || this.PositionCode == PositionCode.RightWing)
-            this.score = StatisticDetails.getGoals()*config.getAttackerGoals() + StatisticDetails.getAssists()*config.getAttackerAssists();
+        if(this.PositionCode == PositionCode.Center || this.PositionCode == PositionCode.LeftWing ||
+                this.PositionCode == PositionCode.RightWing)
+            this.score = StatisticDetails.getGoals()*config.getAttackerGoals() +
+                    StatisticDetails.getAssists()*config.getAttackerAssists();
         else
-            this.score = StatisticDetails.getGoals()*config.getDefenderGoals() + StatisticDetails.getAssists()*config.getDefenderAssists();
+            this.score = StatisticDetails.getGoals()*config.getDefenderGoals() +
+                    StatisticDetails.getAssists()*config.getDefenderAssists();
     }
 
     protected int getScore(){
@@ -37,7 +40,8 @@ public class Player {
     }
 
     public String toString(){
-        return this.FirstName + " " + this.LastName + ": " + this.StatisticDetails.toString() + ", PositionCode: " + this.PositionCode + ", score: " + this.score;
+        return this.FirstName + " " + this.LastName + ": " + this.StatisticDetails.toString() + ", PositionCode: " +
+                this.PositionCode + ", score: " + this.score;
     }
 
     // nested class corresponding to nested json object
